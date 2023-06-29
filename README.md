@@ -1,5 +1,13 @@
 # 图像中文描述
 
+---
+
+原始仓库：[https://github.com/foamliu/Image-Captioning-PyTorch](https://github.com/foamliu/Image-Captioning-PyTorch)
+
+20230603 Update: 修改scipy和torch版本带来的差异。
+
+---
+
 图像中文描述 + 视觉注意力的 PyTorch 实现。
 
 [Show, Attend, and Tell](https://arxiv.org/pdf/1502.03044.pdf) 是令人惊叹的工作，[这里](https://github.com/kelvinxu/arctic-captions)是作者的原始实现。
