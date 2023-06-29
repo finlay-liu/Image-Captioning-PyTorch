@@ -3,7 +3,7 @@ import json
 
 import jieba
 import numpy as np
-from scipy.misc import imread, imresize
+import cv2
 from torch.utils.data import Dataset
 
 from config import *
@@ -53,11 +53,11 @@ class CaptionDataset(Dataset):
         sample = self.samples[i // captions_per_image]
         path = os.path.join(self.image_folder, sample['image_id'])
         # Read images
-        img = imread(path)
+        img = cv2.imread(path)
         if len(img.shape) == 2:
             img = img[:, :, np.newaxis]
             img = np.concatenate([img, img, img], axis=2)
-        img = imresize(img, (256, 256))
+        img = cv2.resize(img, (256, 256))
         img = img.transpose(2, 0, 1)
         assert img.shape == (3, 256, 256)
         assert np.max(img) <= 255
